@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const blackBtn = document.querySelector('.black');
 const rainbowBtn = document.querySelector('.rainbow');
+const eraserBtn = document.querySelector('.eraser');
 const clearBtn = document.querySelector('.clear');
 
 const square = document.querySelector('div:nth-child(2)');
@@ -31,6 +32,7 @@ function drawBlack() {
     })
   );
   rainbowBtn.classList.remove('active');
+  eraserBtn.classList.remove('active');
   blackBtn.classList.add('active');
 }
 
@@ -46,11 +48,27 @@ function drawRainbow() {
     })
   );
   blackBtn.classList.remove('active');
+  eraserBtn.classList.remove('active');
   rainbowBtn.classList.add('active');
+}
+
+function erase() {
+  squares.forEach((square) =>
+    square.addEventListener('mouseover', (e) => {
+      e.target.setAttribute(
+        'style',
+        'background-color: #fff; border: 1px solid #000'
+      );
+    })
+  );
+  blackBtn.classList.remove('active');
+  rainbowBtn.classList.remove('active');
+  eraserBtn.classList.add('active');
 }
 
 blackBtn.addEventListener('click', drawBlack);
 rainbowBtn.addEventListener('click', drawRainbow);
+eraserBtn.addEventListener('click', erase);
 
 clearBtn.addEventListener('click', () =>
   squares.forEach((square) => {
