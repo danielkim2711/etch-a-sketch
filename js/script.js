@@ -3,7 +3,7 @@ const blackBtn = document.querySelector('.black');
 const rainbowBtn = document.querySelector('.rainbow');
 const clearBtn = document.querySelector('.clear');
 
-const square = document.querySelector('div');
+const square = document.querySelector('div:nth-child(2)');
 const squares = square.childNodes;
 
 function createGrid() {
@@ -30,6 +30,8 @@ function drawBlack() {
       );
     })
   );
+  rainbowBtn.classList.remove('active');
+  blackBtn.classList.add('active');
 }
 
 function drawRainbow() {
@@ -37,14 +39,14 @@ function drawRainbow() {
     square.addEventListener('mouseover', (e) => {
       e.target.setAttribute(
         'style',
-        `background-color: rgb(${Math.floor(
-          Math.random() * 255 + 1
-        )},${Math.floor(Math.random() * 255 + 1)},${Math.floor(
-          Math.random() * 255 + 1
-        )}); border: 1px solid #fff`
+        `background-color: rgb(${Math.floor(Math.random() * 256)},${Math.floor(
+          Math.random() * 256
+        )},${Math.floor(Math.random() * 256)}); border: 1px solid #fff`
       );
     })
   );
+  blackBtn.classList.remove('active');
+  rainbowBtn.classList.add('active');
 }
 
 blackBtn.addEventListener('click', drawBlack);
