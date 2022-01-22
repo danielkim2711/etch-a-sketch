@@ -4,8 +4,7 @@ const rainbowBtn = document.querySelector('.rainbow');
 const eraserBtn = document.querySelector('.eraser');
 const clearBtn = document.querySelector('.clear');
 
-const square = document.querySelector('div:nth-child(2)');
-const squares = square.childNodes;
+const squares = gridContainer.childNodes;
 
 function createGrid() {
   const numberOfSqaures = 16;
