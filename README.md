@@ -6,4 +6,4 @@
 
 This is a simple Etch-a-Sketch built with plain HTML, CSS and vanilla JavaScript.
 
-https://danielkim2711.github.io/etch-a-sketch/
+https://danielkim2711.github.io/etch-a-sketch
